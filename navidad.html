@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A❤️X</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .parisienne-regular {
+            font-family: "Parisienne", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body class="bg-sky-950 text-white font-serif p-4">
+    <div class="text-center fade-in">
+        <h1 class="text-3xl">¡Feliz Navidad!</h1>
+        <h2 class="text-3xl">✨🎉🎀</h2>
+        <h2 class="pt-5 text-xl border-b border-sky-400 text-left">Pasa bonito esta noche...</h2>
+    </div>
+
+    <div
+        class="mt-3 relative flex flex-col rounded-lg bg-sky-800 text-white shadow-md shadow-pink-500/50 fade-in">
+        <div class="p-3">
+            <p class="block font-normal leading-relaxed antialiased">
+                Quiero que sepas que eres lo más bonito que pude conocer en la vida y agradezco haber vivido cada
+                momento contigo
+                porque en cada una de ellas he sido plenamente yo mismo. 😊
+                <br>
+                Mi corazón, cuerpo y alma sintieron la paz y tranquilidad que me da tu sola presencia, tu sola
+                sonrisa, tu voz, tus abrazos, tu mirada. 🥺
+            </p>
+        </div>
+    </div>
+
+    <div
+        class="mt-3 relative flex flex-col rounded-lg bg-sky-800 text-white shadow-md shadow-pink-500/50 fade-in">
+        <div class="p-3">
+            <p class="block font-normal leading-relaxed antialiased">
+                Cada plan, cada sueño espero un día se pueda lograr. De momento sigo con los cambios,
+                afrontando mi mente
+                quitando las formas de pensar que me acumularon y llevaron a este punto.
+                <br>
+                Te extraño ahora de lejos, pero un día te veré y verás tú cuánto he progresado; te aseguro que por ti
+                puedo y
+                quiero hacer todo, porque realmente te amo, porque realmente encajamos de forma perfecta, el uno para el
+                otro,
+                un
+                par que deben estar juntos en la vida.
+            </p>
+        </div>
+    </div>
+
+
+    <div class="text-center fade-in">
+        <p class="pt-3">Te llevo siempre en mi corazón. 😊
+            <br><span>Abrazo y besito. 🤗😙</span>
+        </p>
+        <p class="pt-3 text-md italic parisienne-regular">A ❤️ X</p>
+    </div>
+
+    <script src="js/anime.min.js"></script>
+
+    <script>
+        // Seleccionamos todos los elementos <article> y los elementos .mis-redes
+        const elements = document.querySelectorAll('.fade-in');
+
+        // Función para manejar la animación cuando un elemento entra en la vista
+        function animateElement(entries, observer) {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    // Animación común para los <article> y los .mis-redes
+                    anime({
+                        targets: entry.target,
+                        opacity: 1,               // Hacemos visible el elemento
+                        translateY: 0,            // Desplazamos el elemento hacia su posición original
+                        duration: 1000,           // Duración de la animación
+                        easing: 'easeOutQuad',    // Tipo de easing
+                        delay: index * 200,       // Aseguramos que cada elemento se anime en orden
+                    });
+
+                    // Deja de observar el elemento una vez que se ha animado
+                    observer.unobserve(entry.target);
+                }
+            });
+        }
+
+        // Usamos el IntersectionObserver existente
+        const observer = new IntersectionObserver(animateElement, {
+            threshold: 0.5  // Dispara la animación cuando el 50% del elemento esté visible
+        });
+
+        // Observamos todos los elementos seleccionados
+        elements.forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+
+</html>

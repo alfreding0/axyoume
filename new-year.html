@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A❤️X</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .parisienne-regular {
+            font-family: "Parisienne", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body class="bg-teal-950 text-white font-serif p-4">
+    <div class="text-center fade-in">
+        <h1 class="text-3xl">¡Feliz Año Nuevo!</h1>
+        <h2 class="text-3xl">✨🎉🎀</h2>
+        <h2 class="pt-5 text-xl border-b border-sky-400">Un nuevo año, un nuevo inicio...</h2>
+    </div>
+
+
+    <div
+        class="mt-3 relative flex flex-col rounded-lg bg-teal-800 text-white shadow-lg shadow-teal-500/50 fade-in">
+        <div class="p-3">
+            <p class="block font-normal leading-relaxed antialiased">
+                Sé que fue un año muy díficil, sobre todo las últimas semanas, pero eso no ha impedido que siga viviendo
+                cada momento contigo aún estando tan lejos de ti.
+                <br>
+                Estoy seguro que esto va a mejorar en el futuro, pero por ahora, me alegro de que la conexión que tenemos y llevo siempre conmigo cada momento a tu lado. 😊
+                <br>
+            </p>
+        </div>
+    </div>
+
+    <div class="text-center fade-in">
+        <!-- <a class="underline text-blue-300" href="https://www.youtube.com/watch?v=is_iOZeHTfU">Aprender a quererte</a> -->
+        <p class="pt-3">Te llevo siempre en mi corazón. 😊
+            <br><span>Abrazo y besito. 🤗😙</span>
+        </p>
+        <p class="pt-3 text-md italic parisienne-regular">A ❤️ X</p>
+    </div>
+
+    <script src="js/anime.min.js"></script>
+
+    <script>
+        // Seleccionamos todos los elementos <article> y los elementos .mis-redes
+        const elements = document.querySelectorAll('.fade-in');
+
+        // Función para manejar la animación cuando un elemento entra en la vista
+        function animateElement(entries, observer) {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    // Animación común para los <article> y los .mis-redes
+                    anime({
+                        targets: entry.target,
+                        opacity: 1,               // Hacemos visible el elemento
+                        translateY: 0,            // Desplazamos el elemento hacia su posición original
+                        duration: 1000,           // Duración de la animación
+                        easing: 'easeOutQuad',    // Tipo de easing
+                        delay: index * 200,       // Aseguramos que cada elemento se anime en orden
+                    });
+
+                    // Deja de observar el elemento una vez que se ha animado
+                    observer.unobserve(entry.target);
+                }
+            });
+        }
+
+        // Usamos el IntersectionObserver existente
+        const observer = new IntersectionObserver(animateElement, {
+            threshold: 0.5  // Dispara la animación cuando el 50% del elemento esté visible
+        });
+
+        // Observamos todos los elementos seleccionados
+        elements.forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A❤️X</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FUENTE TIPO CARTA -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .parisienne-regular {
+            font-family: "Parisienne", serif;
+            font-weight: 600;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body class="bg-pink-300 text-white font-serif p-4">
+
+
+    <!-- ANIMACION DE GLOBOS SUBIENDO -->
+    <style>
+        /* styles.css */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+        }
+
+        .balloon-container {
+            /* position: relative; */
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+            height: 100vh;
+            /* background-color: burlywood; */
+            /* Color de fondo del cielo */
+            overflow: hidden;
+        }
+
+        .balloon {
+            position: absolute;
+            bottom: -100px;
+            /* Inicialmente, el globo estará fuera de la pantalla */
+            animation-duration: 2s;
+            /* Duración de la animación */
+            animation-timing-function: ease-in-out;
+            /* Función de temporización */
+            animation-iteration-count: 1;
+            /* Repetir infinitamente */
+            animation-fill-mode: forwards;
+            /* Mantener el estado final de la animación */
+        }
+
+        .balloon-1 {
+            left: 10%;
+            transform: translateX(-50%);
+            animation-name: float-1;
+            /* Nombre de la animación */
+        }
+
+        .balloon-2 {
+            left: 50%;
+            transform: translateX(-50%);
+            animation-name: float-2;
+        }
+
+        .balloon-3 {
+            left: 90%;
+            transform: translateX(-50%);
+            animation-name: float-3;
+        }
+
+        .balloon-4 {
+            left: 40%;
+            transform: translateX(-50%);
+            animation-name: float-1;
+            /* Nombre de la animación */
+        }
+
+        .balloon-5 {
+            left: 20%;
+            transform: translateX(-50%);
+            animation-name: float-3;
+            /* Nombre de la animación */
+        }
+
+        .balloon-6 {
+            left: 60%;
+            transform: translateX(-50%);
+            animation-name: float-1;
+            /* Nombre de la animación */
+        }
+
+        .balloon-7 {
+            left: 75%;
+            transform: translateX(-50%);
+            animation-name: float-2;
+            /* Nombre de la animación */
+        }
+
+        .balloon-8 {
+            left: 80%;
+            transform: translateX(-50%);
+            animation-name: float-1;
+            /* Nombre de la animación */
+        }
+
+        .balloon-9 {
+            left: 43%;
+            transform: translateX(-50%);
+            animation-name: float-3;
+            /* Nombre de la animación */
+        }
+
+        @keyframes float-1 {
+            0% {
+                bottom: -100px;
+                /* Comienza desde abajo de la pantalla */
+            }
+
+            100% {
+                bottom: 100%;
+                /* Termina a un 80% de la altura de la pantalla */
+            }
+        }
+
+        @keyframes float-2 {
+            0% {
+                bottom: -130px;
+            }
+
+            100% {
+                bottom: 100%;
+            }
+        }
+
+        @keyframes float-3 {
+            0% {
+                bottom: -150px;
+            }
+
+            100% {
+                bottom: 100%;
+            }
+        }
+    </style>
+    <div id="contenedor-globos" class="balloon-container">
+        <img src="img/globo.png" alt="Globo" width="160em" class="balloon balloon-1">
+        <img src="img/globo.png" alt="Globo" width="250em" class="balloon balloon-2">
+        <img src="img/globo.png" alt="Globo" width="180em" class="balloon balloon-3">
+        <img src="img/globo.png" alt="Globo" width="210em" class="balloon balloon-4">
+        <img src="img/globo.png" alt="Globo" width="150em" class="balloon balloon-5">
+        <img src="img/globo.png" alt="Globo" width="160em" class="balloon balloon-6">
+        <img src="img/globo.png" alt="Globo" width="110em" class="balloon balloon-7">
+        <img src="img/globo.png" alt="Globo" width="180em" class="balloon balloon-8">
+        <img src="img/globo.png" alt="Globo" width="130em" class="balloon balloon-9">
+    </div>
+    <script>
+        const div = document.getElementById("contenedor-globos");
+
+        setInterval(function () {
+            div.style.display = "none";
+        }, 1500);
+    </script>
+
+
+    <div class="text-center fade-in">
+        <h1 class="text-3xl text-pink-900">¡Feliz Cumpleaños!</h1>
+        <h2 class="text-3xl">🎈🎉🤗🥳🙌✨🎉<br>🎀🎀🎀</h2>
+    </div>
+
+    <div class="mt-3 relative flex flex-col rounded-lg bg-white text-gray-700 shadow-lg shadow-gray-500/50 fade-in">
+        <div class="p-3">
+            <h2 class="text-center text-2xl text-pink-600 parisienne-regular">Querida Ximena 💖</h2>
+            <p class="block font-normal leading-relaxed antialiased">
+                Lo más bonito de la vida eres tú, me encanta que existas, me encanta tu presencia, me encanta que coincidimos en esta vida. 🤗
+                <br>
+                <span class="font-bold">Feliz Cumpleaños! 🎉🥳🎈</span>
+                <br>
+                Espero hayas pasado un lindo día, sé que tus padres te quieren mucho y te prepararon algo lindo. 🎂
+                <br>
+                En cambio, yo no he podido estar cerca tuyo, estamos muy lejos, pero es temporal, ya todo estará bien y estaremos juntos en el futuro. ✨
+                
+            </p>
+        </div>
+    </div>
+
+    <div class="mt-3 relative flex flex-col rounded-lg bg-white text-gray-700 shadow-lg shadow-gray-500/50 fade-in">
+        <div class="p-3">
+            <p class="block font-normal leading-relaxed antialiased">
+                Han sido días complicados para nosotros, hemos tenido un avance en nuestra relación, sabemos que funcionamos bien, pero aún es difícil.
+                <br>
+                Eso no ha impedido que siga pensando en ti, estaremos juntos en el futuro, y estarás siempre conmigo.
+                Te amo y pondré el esfuerzo necesario para ti, para un nosotros, para ese futuro que hemos planeado, en chats, 
+                en llamadas y en persona. Dijimos, tú y yo, "Lo vamos a lograr" y así será. ✨
+            </p>
+        </div>
+    </div>
+
+    <div class="mt-3 relative flex flex-col rounded-lg bg-white text-gray-700 shadow-lg shadow-gray-500/50 fade-in">
+        <div class="p-3">
+            <p class="block font-normal leading-relaxed antialiased">
+                Espero de verdad, de corazón, te haya gustado este detalle, desde las flores hasta el párrafo que te dedico.😊
+                <br>
+                Te amo. 💖
+            </p>
+        </div>
+    </div>
+
+    <div class="text-center fade-in">
+        <!-- <a class="underline text-blue-300" href="https://www.youtube.com/watch?v=is_iOZeHTfU">Aprender a quererte</a> -->
+        <p class="pt-3">Te llevo siempre en mi corazón. 😊
+            <br><span>Abrazo y besito. 🤗😙</span>
+        </p>
+        <p class="pt-3 text-md italic parisienne-regular">A ❤️ X</p>
+    </div>
+
+    <script src="js/anime.min.js"></script>
+
+    <script>
+        // Seleccionamos todos los elementos <article> y los elementos .mis-redes
+        const elements = document.querySelectorAll('.fade-in');
+
+        // Función para manejar la animación cuando un elemento entra en la vista
+        function animateElement(entries, observer) {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    // Animación común para los <article> y los .mis-redes
+                    anime({
+                        targets: entry.target,
+                        opacity: 1,               // Hacemos visible el elemento
+                        translateY: 0,            // Desplazamos el elemento hacia su posición original
+                        duration: 1000,           // Duración de la animación
+                        easing: 'easeOutQuad',    // Tipo de easing
+                        delay: index * 200,       // Aseguramos que cada elemento se anime en orden
+                    });
+
+                    // Deja de observar el elemento una vez que se ha animado
+                    observer.unobserve(entry.target);
+                }
+            });
+        }
+
+        // Usamos el IntersectionObserver existente
+        const observer = new IntersectionObserver(animateElement, {
+            threshold: 0.5  // Dispara la animación cuando el 50% del elemento esté visible
+        });
+
+        // Observamos todos los elementos seleccionados
+        elements.forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+
+
+</html>
