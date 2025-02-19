@@ -14,7 +14,7 @@
     <meta property="og:description" content="Alfredo Ximena You Me - AXYouMe" />
     <meta property="og:url" content="https://alfreding0.github.io/axyoume" />
     <meta property="og:type" content="website" />
-    
+
 
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -43,6 +43,11 @@
 
     <p class="text-center mt-5">A❤️X</p>
 
+    <div class="rounded-lg mt-5 lg:mx-[35rem]">
+        <p class="text-xs">Aún en la distancia puedo sentirme cerca de ti. 🤗</p>
+        <img src="img/maps.jpeg" alt="Mapa recorrido de distancia entre nosotros AXYouMe" class="w-full rounded-lg shadow-md shadow-white">
+    </div>
+
     <script>
         document.getElementById('btnVerificar').addEventListener('click', function () {
             // Obtener el valor del input
@@ -62,12 +67,6 @@
         });
 
     </script>
-
-
-
-
-    <!-- <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script> -->
 
     <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/11.3.0/firebase-app-compat.js"></script>
@@ -146,6 +145,7 @@
             };
         }
 
+        // REGISTRAR REGISTROS EN LA COLECCION
         // Registrar carga de la página en Firebase Firestore
         getVisitData().then(data => {
             db.collection("axvisitas").add(data)
@@ -157,6 +157,43 @@
                 });
         });
 
+
+        // LISTADO DE REGISTROS DE LA COLECCION
+        // Obtener todos los registros de la colección "axvisitas"
+        // db.collection("axvisitas").get()
+        //     .then((querySnapshot) => {
+        //         // Recorrer cada documento en la colección
+        //         querySnapshot.forEach((doc) => {
+        //             console.log(doc.id, " => ", doc.data().timeZone);
+        //         });
+        //     })
+        //     .catch((error) => {
+        //         console.error("Error obteniendo los registros: ", error);
+        //     });
+
+
+
+            // ELIMINAR REGISTROS DE LA COLECCION
+        // Filtrar los registros con timeZone "America/Santiago"
+        // db.collection("axvisitas")
+        //     .where("timeZone", "==", "America/Santiago")  // Filtra los documentos por timeZone
+        //     .get()
+        //     .then((querySnapshot) => {
+        //         // Recorrer todos los documentos obtenidos
+        //         querySnapshot.forEach((doc) => {
+        //             // Eliminar cada documento
+        //             db.collection("axvisitas").doc(doc.id).delete()
+        //                 .then(() => {
+        //                     console.log("Documento eliminado con ID: ", doc.id);
+        //                 })
+        //                 .catch((error) => {
+        //                     console.error("Error eliminando el documento con ID: ", doc.id, error);
+        //                 });
+        //         });
+        //     })
+        //     .catch((error) => {
+        //         console.error("Error obteniendo los registros: ", error);
+        //     });
     </script>
 
 </body>
