@@ -25,54 +25,27 @@
 
 <body class="bg-pink-200 text-white font-sans p-4">
     <div class="text-center fade-in">
-        <h1 class="text-3xl text-pink-900">Mensajes mientras espero por ti, mi amor. 💖</h1>
+        <h1 class="text-3xl text-pink-900">Canciones para ti, mi amor. 💖</h1>
     </div>
 
-    <div class="text-center mt-5 fade-in">
-        <div class="flex flex-col items-center justify-center lg:mx-96">
-            <textarea id="mensaje" rows="1" class="w-full p-3 border rounded text-black rounded-lg resize-none overflow-hidden"
-                placeholder="Escribe un mensaje..."></textarea>
-
-            <script>
-                const textarea = document.getElementById("mensaje");
-
-                textarea.addEventListener("input", function () {
-                    this.style.height = "auto"; // Reinicia la altura
-                    this.style.height = this.scrollHeight + "px"; // Ajusta la altura al contenido
-                });
-
-            </script>
-        </div>
-
-        <div class="grid grid-cols-2 gap-3 xs:w-full lg:mx-96">
-            <div class="mt-3 rounded-full bg-blue-800 text-white shadow-md shadow-blue-500/50">
-                <div class="p-3">
-                    <button id="btnEnviarA" class="block w-full text-center">A</button>
-                </div>
-            </div>
-            <div class="mt-3 rounded-full bg-pink-500 text-white shadow-md shadow-pink-500/50">
-                <div class="p-3">
-                    <button id="btnEnviarX" class="block w-full text-center">X</button>
-                </div>
-            </div>
-        </div>
+    <div class="text-center fade-in">
+        <p class="pt-3 text-md text-gray-800 italic parisienne-regular">A ❤️ X</p>
     </div>
 
-    <div id="messages-container" class="mt-3 py-3 relative lg:mx-96 flex flex-col">
-        <!-- <div class="self-start">
-            <div class="rounded-r-xl rounded-bl-xl bg-pink-700 text-white px-3 py-2 mt-2 inline-block">
-                <span class="text-[8pt] font-mono text-pink-200">📅 ${formattedDate} ⌚️ ${formattedTime} Hrs</span>
-                <p>${data.mensaje}</p>
-            </div>
+    <div class="mt-3 py-3 relative lg:mx-96">
+        <div class="rounded-r-xl rounded-bl-xl bg-pink-700 text-white px-3 py-2 mt-2 inline-block fade-in">
+            <span class="text-[8pt] font-mono text-pink-200">📅 mier, 07/03/2025 ⌚️ 01:00 Hrs</span>
+            <ol class="list-decimal list-inside">
+                <li>Fuentes de Ortiz - Ed Maverick</li>
+                <li>Amor quédate - Jean Carlos Canela</li>
+                <li>Mi suerte - Morat</li>
+            </ol>
         </div>
-        <div class="self-end">
-            <div class="rounded-l-xl rounded-br-xl bg-pink-500 text-white px-3 py-2 mt-2 inline-block">
-                <span class="text-[8pt] font-mono text-pink-200">📅 ${formattedDate} ⌚️ ${formattedTime} Hrs</span>
-                <p>${data.mensaje} Lorem ip quos est.</p>
-            </div>
-        </div> -->
+        <div class="rounded-r-xl rounded-bl-xl bg-pink-700 text-white px-3 py-2 mt-2 inline-block fade-in">
+            <span class="text-[8pt] font-mono text-pink-200">📅 mier, 07/03/2025 ⌚️ 01:00 Hrs</span>
+            <audio src="img/te-quiero-tanto-ov7-guitarra.aac" controls></audio>
+        </div>
     </div>
-
 
     <script src="js/anime.min.js"></script>
 
@@ -110,13 +83,6 @@
             observer.observe(element);
         });
     </script>
-
-
-    <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/11.3.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore-compat.js"></script>
-
-    <script src="js/messages.js"></script>
 </body>
 
 
