@@ -100,6 +100,27 @@
 
     <script src="js/anime.min.js"></script>
 
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const audios = document.querySelectorAll("audio");
+
+        audios.forEach(audio => {
+            audio.addEventListener("play", () => {
+                audios.forEach(otherAudio => {
+                    if (otherAudio !== audio) {
+                        otherAudio.pause();
+                        otherAudio.currentTime = 0; // (opcional) reinicia el audio
+                    }
+                });
+            });
+        });
+    });
+</script>
+
+
+
     <script>
         // Seleccionamos todos los elementos <article> y los elementos .mis-redes
         const elements = document.querySelectorAll('.fade-in');
