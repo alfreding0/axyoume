@@ -84,7 +84,7 @@ db.collection("axmessages")
             const messageHTML = `
                 <div class="${alignClass}">
                     <div class="${roundedClass} ${bgColorClass} text-white px-3 py-2 mt-2 inline-block">
-                        <span class="text-[8pt] font-mono text-gray-200">📅 ${formattedDate} ⌚️ ${formattedTime} Hrs</span>
+                        <span class="text-[8pt] font-mono text-pink-200">📅 ${formattedDate} ⌚️ ${formattedTime} Hrs</span>
                         <p>${enlazarTexto(data.mensaje)}</p>
                     </div>
                 </div>
