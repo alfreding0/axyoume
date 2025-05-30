@@ -77,7 +77,7 @@ db.collection("axmessages")
 
             // Definir estilos según el origen del mensaje
             const alignClass = origen === "A" ? "self-start" : "self-end";
-            const bgColorClass = origen === "A" ? "bg-blue-700" : "bg-pink-600";
+            const bgColorClass = origen === "A" ? "bg-pink-700" : "bg-pink-500";
             const roundedClass = origen === "A" ? "rounded-r-xl rounded-bl-xl" : "rounded-l-xl rounded-br-xl";
 
             // Crear el HTML del mensaje
