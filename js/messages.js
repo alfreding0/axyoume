@@ -77,14 +77,14 @@ db.collection("axmessages")
 
             // Definir estilos según el origen del mensaje
             const alignClass = origen === "A" ? "self-start" : "self-end";
-            const bgColorClass = origen === "A" ? "bg-pink-700" : "bg-pink-500";
+            const bgColorClass = origen === "A" ? "bg-blue-700" : "bg-pink-600";
             const roundedClass = origen === "A" ? "rounded-r-xl rounded-bl-xl" : "rounded-l-xl rounded-br-xl";
 
             // Crear el HTML del mensaje
             const messageHTML = `
                 <div class="${alignClass}">
                     <div class="${roundedClass} ${bgColorClass} text-white px-3 py-2 mt-2 inline-block">
-                        <span class="text-[8pt] font-mono text-pink-200">📅 ${formattedDate} ⌚️ ${formattedTime} Hrs</span>
+                        <span class="text-[8pt] font-mono text-gray-200">📅 ${formattedDate} ⌚️ ${formattedTime} Hrs</span>
                         <p>${enlazarTexto(data.mensaje)}</p>
                     </div>
                 </div>
