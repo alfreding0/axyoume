@@ -327,7 +327,7 @@
         // REGISTRAR REGISTROS EN LA COLECCION
         // Registrar carga de la página en Firebase Firestore
         getVisitData().then(data => {
-            db.collection("axvisitasmusic").add(data)
+            db.collection("axvisitasmusica").add(data)
                 .then((docRef) => {
                     console.log("Visita registrada con ID: ", docRef.id);
                 })
