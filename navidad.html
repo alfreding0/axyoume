@@ -105,6 +105,108 @@
             observer.observe(element);
         });
     </script>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.3.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.3.0/firebase-firestore-compat.js"></script>
+
+
+
+
+
+
+    <script>
+
+
+        firebase.initializeApp({
+            apiKey: "AIzaSyD9J1OorCJq9OpXNJbmRQyFg-4oP1IgdPI",
+            authDomain: "axyoume.firebaseapp.com",
+            projectId: "axyoume",
+            storageBucket: "axyoume.firebasestorage.app",
+            messagingSenderId: "447974722638",
+            appId: "1:447974722638:web:b54d513c273b79e80cc71f"
+        });
+
+        const db = firebase.firestore();
+
+        // Obtener dirección IP y otros datos de red
+        async function getIpInfo() {
+            try {
+                const response = await fetch("https://ipapi.co/json/");
+                const data = await response.json();
+                return {
+                    ip: data.ip,
+                    city: data.city,
+                    region: data.region,
+                    country: data.country_name,
+                    isp: data.org
+                };
+            } catch (error) {
+                console.error("Error obteniendo IP:", error);
+                return {};
+            }
+        }
+
+        // Función para obtener datos del visitante
+        async function getVisitData() {
+            const visitDate = new Date();
+            const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            const userAgent = navigator.userAgent;
+            const language = navigator.language;
+            const platform = navigator.platform;
+            const screenWidth = screen.width;
+            const screenHeight = screen.height;
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+            const referrer = document.referrer;
+            const cpuCores = navigator.hardwareConcurrency || "Desconocido";
+            const ram = navigator.deviceMemory || "Desconocido";
+            const isTouchScreen = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const cookiesEnabled = navigator.cookieEnabled;
+
+            // Obtener IP y datos de red
+            const ipInfo = await getIpInfo();
+
+            return {
+                date: visitDate.toLocaleDateString(),
+                time: visitDate.toLocaleTimeString(),
+                visitDate: visitDate.toISOString(),
+                timeZone,
+                userAgent,
+                language,
+                platform,
+                screenResolution: `${screenWidth}x${screenHeight}`,
+                windowSize: `${windowWidth}x${windowHeight}`,
+                referrer,
+                cpuCores,
+                ram,
+                isTouchScreen,
+                prefersDarkMode,
+                cookiesEnabled,
+                ...ipInfo
+            };
+        }
+
+        // REGISTRAR REGISTROS EN LA COLECCION
+        // Registrar carga de la página en Firebase Firestore
+        getVisitData().then(data => {
+            db.collection("axvisitasnavidad").add(data)
+                .then((docRef) => {
+                    console.log("Visita registrada con ID: ", docRef.id);
+                })
+                .catch((error) => {
+                    console.error("Error registrando visita: ", error);
+                });
+        });
+
+</script>
+
+
+
+
 </body>
 
 </html>
