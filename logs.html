@@ -15,6 +15,20 @@
 
 
 <h2>Visitas Index</h2>
+<table id="visitasTableIndex" border="1">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Hora</th>
+      <th>Ciudad</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+<br>
+
+
+<h2>Visitas Home</h2>
 <table id="visitasTableHome" border="1">
   <thead>
     <tr>
@@ -25,6 +39,45 @@
   </thead>
   <tbody></tbody>
 </table>
+<br>
+
+
+
+<h2>Visitas Mensajes</h2>
+<table id="visitasTableMessages" border="1">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Hora</th>
+      <th>Ciudad</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+<br>
+
+
+
+
+
+
+<h2>Visitas Músicas</h2>
+<table id="visitasTableMusic" border="1">
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Hora</th>
+      <th>Ciudad</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+<br>
+
+
+
+
+
 
 
 
@@ -59,17 +112,17 @@
 
 
 // Cargar visitas solo de "Santiago"
-function cargarVisitasHome() {
+function cargarVisitasIndex() {
     db.collection("axvisitas")
         .where("country", "==", "Bolivia")
         .get()
         .then((querySnapshot) => {
-            const tableBody = document.querySelector("#visitasTableHome");
+            const tableBody = document.querySelector("#visitasTableIndex");
             tableBody.innerHTML = ""; // Limpiar contenido anterior
 
             if (querySnapshot.empty) {
                 const row = document.createElement("tr");
-                row.innerHTML = `<td colspan="4">No hay registros para Santiago.</td>`;
+                row.innerHTML = `<td colspan="3">No hay registros para Santiago.</td>`;
                 tableBody.appendChild(row);
                 return;
             }
@@ -79,7 +132,47 @@ function cargarVisitasHome() {
                 const row = document.createElement("tr");
 
                 row.innerHTML = `
-                    <td>${doc.id}</td>
+                    <td>${data.date}</td>
+                    <td>${data.time}</td>
+                    <td>${data.city}</td>
+                `;
+
+                tableBody.appendChild(row);
+            });
+        })
+        .catch((error) => {
+            console.error("Error al obtener los datos:", error);
+        });
+}
+
+// Llama a la función al cargar la página
+cargarVisitasIndex();
+
+
+
+
+
+// Cargar visitas solo de "Santiago"
+function cargarVisitasHome() {
+    db.collection("axvisitashome")
+        .where("country", "==", "Bolivia")
+        .get()
+        .then((querySnapshot) => {
+            const tableBody = document.querySelector("#visitasTableHome");
+            tableBody.innerHTML = ""; // Limpiar contenido anterior
+
+            if (querySnapshot.empty) {
+                const row = document.createElement("tr");
+                row.innerHTML = `<td colspan="3">No hay registros para Santiago.</td>`;
+                tableBody.appendChild(row);
+                return;
+            }
+
+            querySnapshot.forEach((doc) => {
+                const data = doc.data();
+                const row = document.createElement("tr");
+
+                row.innerHTML = `
                     <td>${data.date}</td>
                     <td>${data.time}</td>
                     <td>${data.city}</td>
@@ -95,6 +188,103 @@ function cargarVisitasHome() {
 
 // Llama a la función al cargar la página
 cargarVisitasHome();
+
+
+
+
+
+
+
+
+
+// Cargar visitas solo de "Santiago"
+function cargarVisitasMessages() {
+    db.collection("axvisitasmessages")
+        .where("country", "==", "Bolivia")
+        .get()
+        .then((querySnapshot) => {
+            const tableBody = document.querySelector("#visitasTableMessages");
+            tableBody.innerHTML = ""; // Limpiar contenido anterior
+
+            if (querySnapshot.empty) {
+                const row = document.createElement("tr");
+                row.innerHTML = `<td colspan="3">No hay registros para Santiago.</td>`;
+                tableBody.appendChild(row);
+                return;
+            }
+
+            querySnapshot.forEach((doc) => {
+                const data = doc.data();
+                const row = document.createElement("tr");
+
+                row.innerHTML = `
+                    <td>${data.date}</td>
+                    <td>${data.time}</td>
+                    <td>${data.city}</td>
+                `;
+
+                tableBody.appendChild(row);
+            });
+        })
+        .catch((error) => {
+            console.error("Error al obtener los datos:", error);
+        });
+}
+
+// Llama a la función al cargar la página
+cargarVisitasMessages();
+
+
+
+
+
+
+
+// Cargar visitas solo de "Santiago"
+function cargarVisitasMusic() {
+    db.collection("axvisitasmusic")
+        .where("country", "==", "Bolivia")
+        .get()
+        .then((querySnapshot) => {
+            const tableBody = document.querySelector("#visitasTableMusic");
+            tableBody.innerHTML = ""; // Limpiar contenido anterior
+
+            if (querySnapshot.empty) {
+                const row = document.createElement("tr");
+                row.innerHTML = `<td colspan="3">No hay registros para Santiago.</td>`;
+                tableBody.appendChild(row);
+                return;
+            }
+
+            querySnapshot.forEach((doc) => {
+                const data = doc.data();
+                const row = document.createElement("tr");
+
+                row.innerHTML = `
+                    <td>${data.date}</td>
+                    <td>${data.time}</td>
+                    <td>${data.city}</td>
+                `;
+
+                tableBody.appendChild(row);
+            });
+        })
+        .catch((error) => {
+            console.error("Error al obtener los datos:", error);
+        });
+}
+
+// Llama a la función al cargar la página
+cargarVisitasMusic();
+
+
+
+
+
+
+
+
+
 
 </script>
 
