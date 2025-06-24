@@ -14,7 +14,7 @@
 <body class="bg-blue-200 font-sans p-4">
 
 
-<h2>Visitas Index</h2>
+<h2>Index</h2>
 <table id="visitasTableIndex" border="1">
   <thead>
     <tr>
@@ -28,7 +28,7 @@
 <br>
 
 
-<h2>Visitas Home</h2>
+<h2>Home</h2>
 <table id="visitasTableHome" border="1">
   <thead>
     <tr>
@@ -43,7 +43,7 @@
 
 
 
-<h2>Visitas Mensajes</h2>
+<h2>Messages</h2>
 <table id="visitasTableMessages" border="1">
   <thead>
     <tr>
@@ -61,7 +61,7 @@
 
 
 
-<h2>Visitas Músicas</h2>
+<h2>Music</h2>
 <table id="visitasTableMusic" border="1">
   <thead>
     <tr>
@@ -115,6 +115,7 @@
 function cargarVisitasIndex() {
     db.collection("axvisitas")
         .where("country", "==", "Bolivia")
+        .orderBy("visitDate", "asc")
         .get()
         .then((querySnapshot) => {
             const tableBody = document.querySelector("#visitasTableIndex");
@@ -122,7 +123,7 @@ function cargarVisitasIndex() {
 
             if (querySnapshot.empty) {
                 const row = document.createElement("tr");
-                row.innerHTML = `<td colspan="3">No hay registros para Santiago.</td>`;
+                row.innerHTML = `<td colspan="3">No hay registros.</td>`;
                 tableBody.appendChild(row);
                 return;
             }
@@ -156,14 +157,15 @@ cargarVisitasIndex();
 function cargarVisitasHome() {
     db.collection("axvisitashome")
         .where("country", "==", "Bolivia")
-        .get()
+.orderBy("visitDate", "asc") 
+.get()
         .then((querySnapshot) => {
             const tableBody = document.querySelector("#visitasTableHome");
             tableBody.innerHTML = ""; // Limpiar contenido anterior
 
             if (querySnapshot.empty) {
                 const row = document.createElement("tr");
-                row.innerHTML = `<td colspan="3">No hay registros para Santiago.</td>`;
+                row.innerHTML = `<td colspan="3">No hay registros.</td>`;
                 tableBody.appendChild(row);
                 return;
             }
@@ -201,6 +203,7 @@ cargarVisitasHome();
 function cargarVisitasMessages() {
     db.collection("axvisitasmessages")
         .where("country", "==", "Bolivia")
+        .orderBy("visitDate", "asc")
         .get()
         .then((querySnapshot) => {
             const tableBody = document.querySelector("#visitasTableMessages");
@@ -208,7 +211,7 @@ function cargarVisitasMessages() {
 
             if (querySnapshot.empty) {
                 const row = document.createElement("tr");
-                row.innerHTML = `<td colspan="3">No hay registros para Santiago.</td>`;
+                row.innerHTML = `<td colspan="3">No hay registros.</td>`;
                 tableBody.appendChild(row);
                 return;
             }
@@ -244,6 +247,7 @@ cargarVisitasMessages();
 function cargarVisitasMusic() {
     db.collection("axvisitasmusic")
         .where("country", "==", "Bolivia")
+        .orderBy("visitDate", "asc")
         .get()
         .then((querySnapshot) => {
             const tableBody = document.querySelector("#visitasTableMusic");
@@ -251,7 +255,7 @@ function cargarVisitasMusic() {
 
             if (querySnapshot.empty) {
                 const row = document.createElement("tr");
-                row.innerHTML = `<td colspan="3">No hay registros para Santiago.</td>`;
+                row.innerHTML = `<td colspan="3">No hay registros.</td>`;
                 tableBody.appendChild(row);
                 return;
             }
