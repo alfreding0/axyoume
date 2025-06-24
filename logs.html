@@ -9,29 +9,15 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- FUENTE TIPO CARTA -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/style.css">
-    <style>
-        .parisienne-regular {
-            font-family: "Parisienne", serif;
-            font-weight: 600;
-            font-style: normal;
-        }
-    </style>
 </head>
 
-<body class="bg-pink-200 text-white font-sans p-4">
+<body class="bg-blue-200 font-sans p-4">
 
 
-<h2>visitasTableHome</h2>
+<h2>Visitas Index</h2>
 <table id="visitasTableHome" border="1">
   <thead>
     <tr>
-      <th>ID</th>
       <th>Fecha</th>
       <th>Hora</th>
       <th>Ciudad</th>
@@ -74,8 +60,8 @@
 
 // Cargar visitas solo de "Santiago"
 function cargarVisitasHome() {
-    db.collection("axvisitashome")
-        .where("city", "==", "Santiago")
+    db.collection("axvisitas")
+        .where("country", "==", "Bolivia")
         .get()
         .then((querySnapshot) => {
             const tableBody = document.querySelector("#visitasTableHome");
