@@ -115,7 +115,7 @@
 function cargarVisitasIndex() {
     db.collection("axvisitas")
         .where("country", "==", "Bolivia")
-        .orderBy("date", "asc")
+// .orderBy("date", "asc")
         .get()
         .then((querySnapshot) => {
             const tableBody = document.querySelector("#visitasTableIndex");
